@@ -19,6 +19,8 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+  final ValueNotifier<int> counter = ValueNotifier(1);
+
   @override
   void initState() {
     super.initState();
@@ -39,25 +41,37 @@ class _GameScreenState extends State<GameScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
 
-              child: const Text(
-                'Score: 1',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+              child:  ValueListenableBuilder<int>(
+                valueListenable: counter,
+                builder: (context, score, child) {
+                  return Text(
+                    'Score: $score',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
               ),
-            ), 
-          ), 
+            ),
+          ),
           Positioned(
             top: 50,
             right: 20,
             child: Row(
-            children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.music_note, color: Colors.black,)),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.volume_up, color: Colors.black,))
-            ],
-          ))
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.music_note, color: Colors.black),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.volume_up, color: Colors.black),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
