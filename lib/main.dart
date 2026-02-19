@@ -47,8 +47,17 @@ class _GameScreenState extends State<GameScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ), //Container
-          ), // Positioned
+            ), 
+          ), 
+          Positioned(
+            top: 50,
+            right: 20,
+            child: Row(
+            children: [
+              IconButton(onPressed: () {}, icon: const Icon(Icons.music_note, color: Colors.black,)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.volume_up, color: Colors.black,))
+            ],
+          ))
         ],
       ),
     );
