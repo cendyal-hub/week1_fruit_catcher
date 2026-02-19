@@ -1,8 +1,12 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_catcher/game/fruit_catcher_game.dart';
+import 'package:fruit_catcher/game/managers/audio_manager.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize audio
+  await AudioManager().initialize();
   runApp(const MyApp());
 }
 
@@ -22,6 +26,7 @@ class GameScreen extends StatefulWidget {
 
 class _GameScreenState extends State<GameScreen> {
   late FruitCatcherGame game;
+  final ValueNotifier<int> counter = ValueNotifier(0);
 
 
   @override
@@ -29,7 +34,12 @@ class _GameScreenState extends State<GameScreen> {
     super.initState();
     game = FruitCatcherGame();
   }
-  final ValueNotifier<int> counter = ValueNotifier(0);
+
+   @override
+  void dispose() {
+    game.onRemove();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +78,15 @@ class _GameScreenState extends State<GameScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AudioManager().toggleMusic();
+                      },
                       icon: const Icon(Icons.music_note, color: Colors.black),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AudioManager().toggleSfx();
+                      },
                       icon: const Icon(Icons.volume_up, color: Colors.black),
                     ),
                   ],
