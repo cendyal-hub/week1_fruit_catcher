@@ -1,16 +1,29 @@
-# fruit_catcher
+# Fruit Catcher
 
-A new Flutter project.
+Tugas mata kuliah **Mobile App**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Hasil Screenshot
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+  <img src="assets/images/before.png" width="200">
+  <img src="assets/images/after.png" width="200">
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Perubahan yang Dilakukan
+
+Mengubah objek dari lingkaran (fruit) menjadi bug/kumbang
+
+---
+
+## 👤 Identitas
+
+| Keterangan       | Data           |
+| ---------------- | -------------- |
+| **Nama Lengkap** | Cendy Alvianto |
+| **NIM**          | 1123150136     |
+
+---
