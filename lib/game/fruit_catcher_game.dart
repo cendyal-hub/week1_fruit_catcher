@@ -76,12 +76,12 @@ class FruitCatcherGame extends FlameGame
     pauseEngine();
 
     // Show game over dialog
+  }
     @override
     void onRemove() {
       AudioManager().stopBackgroundMusic();
       super.onRemove();
     }
-  }
 
   @override
   Color backgroundColor() => const Color(0xFF87CEEB); // Skyblue
